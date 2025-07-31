@@ -209,7 +209,7 @@ button {
   animation: shake 0.6s ease-in-out;
   background-color: #a46e3c;
 }
-.musuem {
+.fadeIn {
   animation: bounceIn 2s ease-in-out;
 }
 
