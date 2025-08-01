@@ -30,12 +30,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 m-4 px-4 rounded-xl flex justify-between items-center z-50 bg-[#000] dark:bg-[#fff]">
+    <nav className="fixed top-0 left-0 right-0 m-4 px-4 rounded-xl flex justify-between items-center z-45 bg-[#000] dark:bg-[#fff]">
       <Link to="/" className="text-white text-2xl">
         <img src={isDark ? '/home/logo-dark.png' : '/home/logo-light.png'  } alt="logo" className="w-20 md:w-25 object-contain" />
       </Link>
 
-      {/* Theme Toggle */}
       <div className='flex items-center gap-4'>
         <button
         onClick={toggleTheme}
