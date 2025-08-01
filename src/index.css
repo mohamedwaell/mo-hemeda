@@ -1,7 +1,17 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+body {
+ 
+  background-image: url("/home/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #fff;
+   @apply dark:bg-[#000]
 
+}
 nav a,
 button {
   cursor: pointer;

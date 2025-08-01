@@ -5,10 +5,10 @@ import Typewriter from '../components/Text';
 import Footer from '../components/Footer';
 const Home = () => {
   return ( 
-    <section className=' bg-cover bg-center bg-no-repeat bg-fixed bg-white dark:bg-black'style={{backgroundImage: "url('./home/bg.png')" }}>
+    <>
       <Navbar />
 
-      <div className='flex flex-col items-center justify-between  flex-col md:flex-row h-screen '>
+      <div className='flex flex-col items-center justify-between  flex-col md:flex-row h-[100vh] '>
       <div className='flex items-center justify-center h-full md:w-1/2 pt-20 md:pt-0 '>
         <img src="./home/hero.png" alt="" className='w-full  rounded-full hover:scale-105 duration-500'/>
       </div>
@@ -27,7 +27,7 @@ const Home = () => {
     </div>
    
     <Footer />
-    </section>
+    </>
   
   )
 }
