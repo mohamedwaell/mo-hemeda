@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Navbar />
 
-      <section className='flex flex-col items-center justify-between  flex-col md:flex-row h-screen bg-cover bg-center bg-no-repeat bg-fixed bg-white dark:bg-black  ' style={{ backgroundImage: "url('./home/bg.png')" }}>
+      <section className='flex flex-col items-center justify-between  flex-col md:flex-row h-screen bg-cover bg-center bg-no-repeat bg-fixed bg-white dark:bg-black overflow-hidden ' style={{ backgroundImage: "url('./home/bg.png')" }}>
       <div className='flex items-center justify-center h-full md:w-1/2 pt-20 md:pt-0 '>
         <img src="./home/hero.png" alt="" className='w-full  rounded-full hover:scale-105 duration-500'/>
       </div>
