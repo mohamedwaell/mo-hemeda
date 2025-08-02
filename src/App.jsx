@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./sections/Home.jsx";
-
+import Grades from "./sections/Grades.jsx";
+import GradeDetial from "./sections/GradeDetial.jsx";
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(true);
@@ -37,6 +38,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/grades" element={<Grades />} />
+          <Route path="/grades/:link" element={<GradeDetial />} />
+
         </Routes>
       </Router>
     </>

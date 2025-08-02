@@ -15,7 +15,7 @@ const Home = () => {
       <div className='flex items-center justify-center flex-col h-full md:w-1/2 h-[50vh] '>
         <Typewriter />
         
-        <Link to={'/about'} className='flex items-center justify-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700
+        <Link to={'/grades'} className='flex items-center justify-center bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700
              text-white font-semibold py-2 px-6 rounded-lg mt-10
              hover:from-blue-600 hover:to-blue-800
              hover:scale-105 transition-all duration-300 shadow-md'>

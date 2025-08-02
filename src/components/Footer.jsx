@@ -6,8 +6,7 @@ const Footer = () => {
   return (
     <footer className=" text-neon-white py-6 h-[30vh] flex flex-col md:flex-row items-center justify-between bg-no-repeat bg-cover bg-gray-900  " style={{backgroundImage: "url('./home/footer.png')"}}>
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
-
-      
+    
         <div className="flex space-x-4">
           {socialLinks.map((social) => {
             const Icon = FaIcons[social.icon];
@@ -17,7 +16,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-5xl hover:text-red-500 transition"
+                className="text-5xl hover:animate-pulse hover:scale-110 transition"
                 title={social.name}
               >
                 <Icon  />
@@ -25,6 +24,11 @@ const Footer = () => {
             );
           })}
         </div>
+        <div>
+           <img src="./home/footer-logo.jpg" alt="" className='w-70 mr-5'/>
+      
+        </div>
+          
          <div className="mt-4 md:mt-0 text-center md:text-left ">
           <a href='https://hema-cyan.vercel.app/' target='_blank'>
           &copy; {new Date().getFullYear()} HEMA All rights reserved.
