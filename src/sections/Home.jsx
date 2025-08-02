@@ -10,7 +10,7 @@ const Home = () => {
 
       <div className='flex flex-col items-center justify-between  flex-col md:flex-row h-[100vh] '>
       <div className='flex items-center justify-center h-full md:w-1/2 pt-20 md:pt-0 '>
-        <img src="./home/hero.png" alt="" className='w-full  rounded-full hover:scale-105 duration-500 '/>
+        <img src="./home/hema.jpg" alt="" className='w-80  rounded-full hover:scale-105 duration-500 '/>
       </div>
       <div className='flex items-center justify-center flex-col h-full md:w-1/2 h-[50vh] '>
         <Typewriter />
