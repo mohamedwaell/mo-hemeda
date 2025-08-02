@@ -17,7 +17,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl hover:text-red-500 transition"
+                className="text-5xl hover:text-red-500 transition"
                 title={social.name}
               >
                 <Icon  />

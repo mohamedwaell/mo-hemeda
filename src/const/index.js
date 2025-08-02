@@ -12,8 +12,9 @@ export const socialLinks = [
     icon: 'FaTwitter',
   },
   {
-    name: 'GitHub',
-    href: 'https://github.com',
-    icon: 'FaGithub',
+    name: 'YOUTUBE',
+    href: 'https://youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF',
+    icon: 'FaYoutube',
   },
+  
 ];
