@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+
 import { Link } from 'react-router-dom'
 import { Grade } from '../const/index.js'
 
@@ -9,7 +8,6 @@ import { Grade } from '../const/index.js'
 const Grades = () => {
   return (
     <section >
-      <Navbar />
       <div className='flex flex-col  items-center justify-center gap-10 min-h-[100vh] mt-20 '>
         <div className='flex flex-col md:flex-row items-center justify-center gap-10 '>
           {Grade.map((grade) => (
@@ -30,7 +28,6 @@ const Grades = () => {
       
       </div>
 
-      <Footer />
     </section>
   )
 }
