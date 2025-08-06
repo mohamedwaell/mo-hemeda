@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Typewriter from '../components/Text';
 import Footer from '../components/Footer';
 import Fetures from '../components/Fetures';
+import Grades from './Grades'
 const Home = () => {
   return (
     <>
@@ -26,6 +27,7 @@ const Home = () => {
         </div>
       </div>
       <Fetures />
+      <Grades />
       <Footer />
     </>
 
