@@ -24,10 +24,10 @@ const Footer = () => {
             );
           })}
         </div>
-        <div>
+        {/* <div>
            <img src="./home/footer-logo.jpg" alt="" className='w-70 mr-5'/>
       
-        </div>
+        </div> */}
           
          <div className="mt-4 md:mt-0 text-center md:text-left ">
           <a href='https://hema-cyan.vercel.app/' target='_blank'>
