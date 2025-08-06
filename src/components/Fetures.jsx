@@ -1,0 +1,20 @@
+import React from 'react'
+import { services } from '../const/index.js'
+const Fetures = () => {
+  return (
+    <div className='flex justify-between flex-col my-10 text-center gap-10 text-black dark:text-white'>
+      <h1 className='text-7xl text-black dark:text-white'>خدماتنا</h1>
+      <div className='flex flex-wrap justify-center gap-10'>
+        {services.map((service)=>{
+            return(
+         <div key={service.id} className='w-[300px] text-2xl bg-blue-500 rounded-[15px] py-20 px-2 mx-2 overflow-hidden   content-center transition-transform duration-300 hover:-translate-y-2'>
+            <h1>{service.title}</h1>
+         </div>
+            )
+        })}
+      </div>
+    </div>
+  )
+}
+
+export default Fetures
