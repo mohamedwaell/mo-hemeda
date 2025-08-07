@@ -7,15 +7,16 @@ export const socialLinks = [
     icon: 'FaFacebookF',
   },
   {
-    name: 'Twitter',
-    href: 'https://twitter.com',
-    icon: 'FaTwitter',
+    name: 'Instagram',
+    href: 'https://instagram.com',
+    icon: 'FaInstagram',
   },
   {
     name: 'YOUTUBE',
     href: 'https://youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF',
     icon: 'FaYoutube',
   },
+   
   
 ];
 export const Grade = [

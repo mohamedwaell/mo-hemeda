@@ -7,7 +7,7 @@ const Fetures = () => {
       <div className='flex flex-wrap justify-center gap-10'>
         {services.map((service)=>{
             return(
-         <div key={service.id} className='w-[300px] text-2xl bg-blue-500 rounded-[15px] mx-5 overflow-hidden   content-center transition-transform duration-300 hover:-translate-y-2'>
+         <div key={service.id} className='w-[300px] text-2xl rounded-[15px] mx-5 overflow-hidden   content-center transition-transform duration-300 hover:-translate-y-2'>
          <img src={`/features/${service.id}.jpg`} />
          </div>
             )

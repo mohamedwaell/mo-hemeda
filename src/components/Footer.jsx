@@ -4,8 +4,8 @@ import * as FaIcons from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className=" text-neon-white py-6 h-[30vh] flex flex-col md:flex-row items-center justify-between bg-no-repeat bg-cover bg-gray-900  " style={{backgroundImage: "url('./home/footer.png')"}}>
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+    <footer className=" text-black dark:text-white pt-6 pb-2 flex flex-col items-center justify-between gap-5  border-t-2">
+      
     
         <div className="flex space-x-4">
           {socialLinks.map((social) => {
@@ -16,7 +16,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-5xl hover:animate-pulse hover:scale-110 transition"
+                className="text-3xl hover:animate-pulse text-blue-500 hover:scale-110 transition"
                 title={social.name}
               >
                 <Icon  />
@@ -35,7 +35,7 @@ const Footer = () => {
           </a>
         </div>
 
-      </div>
+      
     </footer>
   );
 };

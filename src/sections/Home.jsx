@@ -29,7 +29,7 @@ const Home = () => {
         <div className='flex items-center justify-center flex-col h-full md:w-1/2 h-[50vh]'>
           <h1 className='text-6xl md:text-7xl text-white mb-10 text-center md:text-right md:mr-10'>
             <span className='text-black dark:text-white'> الاستاذ </span>
-            <span className='text-[#FFD700]'> محمد حميده</span>
+            <span className='text-green-500'> محمد حميده</span>
           </h1>
 
           <Typewriter />
