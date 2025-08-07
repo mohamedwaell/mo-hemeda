@@ -41,7 +41,7 @@ const Typewriter = () => {
   }, []);
 
   return (
-    <h1 className="text-3xl font-bold text-black dark:text-white">
+    <h1 className="text-3xl text-center text-black dark:text-white mx-2">
       {texts[index].substring(0, subIndex)}
       <span className={`${blink ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
     </h1>
