@@ -4,8 +4,8 @@ import { Grade } from '../const/index.js';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 const GradeDetial = () => {
-  const { link } = useParams();
-  const matchedGrade = Grade.find((grade) => grade.link === link);
+  const { name } = useParams();
+  const matchedGrade = Grade.find((grade) => grade.name === name);
 
   return (
     <section >

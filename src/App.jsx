@@ -39,7 +39,7 @@ const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/grades/:link" element={<GradeDetial />} />
+          <Route path="/grades/:name" element={<GradeDetial />} />
 
         </Routes>
       </Router>

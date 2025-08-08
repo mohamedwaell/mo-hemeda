@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400..900;1,400..900&display=swap');
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('/font/alfont_com_DGRafah-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
  
   background-image: url("/home/bg.png");
@@ -11,7 +18,7 @@ body {
   background-attachment: fixed;
   background-color: #fff;
    @apply dark:bg-[#000];
-   font-family: Kufam, Courier, monospace;
+   font-family: 'MyFont', Courier, monospace;
    font-weight: 900;
 
 }

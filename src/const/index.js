@@ -22,21 +22,18 @@ export const socialLinks = [
 export const Grade = [
     {
         id:1,
-        name:"Grade 1",
-        link:"grade-1",
-        photo:"/grades/grade-3.jpg"
+        name:"الصف الاول الاعدادي",
+        photo:"/grades/grade-1.jpg"
     },
     {
         id:2,
-        name:"Grade 2",
-        link:"grade-2",
-        photo:"/grades/grade-3.jpg"
+        name:"الصف الثاني الاعدادي",
+        photo:"/grades/grade-2.jpg"
 
     },
     {
         id:3,
-        name:"Grade 3",
-        link:"grade-3",
+        name:"الصف الثالث الاعدادي",
         photo:"/grades/grade-3.jpg"
 
     },
