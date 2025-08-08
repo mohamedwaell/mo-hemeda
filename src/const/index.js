@@ -3,18 +3,18 @@
 export const socialLinks = [
   {
     name: 'Facebook',
-    href: 'https://facebook.com',
-    icon: 'FaFacebookF',
+    href: 'https://youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF',
+    icon: '/footer/facebook.png',
   },
   {
     name: 'Instagram',
     href: 'https://instagram.com',
-    icon: 'FaInstagram',
+    icon: '/footer/instagram.png',
   },
   {
     name: 'YOUTUBE',
     href: 'https://youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF',
-    icon: 'FaYoutube',
+    icon: '/footer/youtube.png',
   },
    
   
