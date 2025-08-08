@@ -1,20 +1,67 @@
-import React from 'react'
-import { services } from '../const/index.js'
+import React, { useEffect, useRef } from 'react'
+// import { services } from '../const/index.js'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import Book from './Book.jsx'
 const Fetures = () => {
+  const [IsMobile, setIsMobile] = React.useState(false);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 500px)');
+    setIsMobile(mediaQuery.matches);
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  })
+  const Scene = () => {
+    const ref = useRef();
+    useFrame(() => {
+      ref.current.rotation.y += 0.01
+    })
+    return (
+      <>
+        <ambientLight />
+        <group position={[0, 0, 0]} scale={.02} ref={ref}>
+          <Book />
+        </group>
+        {!IsMobile && <OrbitControls enableZoom={false} />}
+      </>
+
+    )
+  }
+
+
   return (
-    <div className='flex justify-between flex-col my-10 text-center gap-10 text-black dark:text-white'>
-      <h1 className='text-7xl text-black dark:text-white'>خدماتنا</h1>
-      <div className='flex flex-wrap justify-center gap-10'>
-        {services.map((service)=>{
-            return(
-         <div key={service.id} className='w-[300px] text-2xl rounded-[15px] mx-5 overflow-hidden   content-center transition-transform duration-300 hover:-translate-y-2'>
-         <img src={`/features/${service.id}.jpg`} />
-         </div>
-            )
-        })}
+    <div className='flex justify-center flex-row my-10 text-center items-center gap-10 text-black dark:text-white'>
+      <div className='w-1/4 md:w-1/3'>
+        {IsMobile ? (
+
+
+          <Canvas camera={{ position: [0, 0, 13], fov: 75 }} style={{ height: '100%', width: '100%' }} >
+
+            <Scene />
+          </Canvas>
+
+
+        ) : (
+
+          <Canvas camera={{ position: [0, 0, 8], fov: 65 }} style={{ height: '35vh', width: '100%' }} >
+
+            <Scene />
+
+          </Canvas>
+
+        )}
       </div>
+
+      <h1 className='text-2xl md:text-7xl text-black dark:text-white'> <span className='text-blue-500'>?..</span> خدماتنا</h1>
+
     </div>
   )
 }
 
 export default Fetures
+

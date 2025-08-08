@@ -15,7 +15,7 @@ const Grades = () => {
             <div key={grade.id} className='flex flex-col items-center justify-center'>
 
               <Link to={`/grades/${grade.name}`}>
-              <div className='flex flex-col mb-10 cursor-pointer mx-5'>
+              <div className='flex flex-col mb-10 cursor-pointer'>
               <div className='group rounded-xl overflow-hidden aspect-w-16 aspect-h-9 w-[300px] md:w-[400px]  '>
                 <img src={grade.photo} className="w-full h-full object-cover transform group-hover:scale-110 duration-500 ease-in-out grayscale-30 hover:grayscale-0" alt="" />
 
