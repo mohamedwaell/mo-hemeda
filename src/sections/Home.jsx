@@ -36,10 +36,10 @@ const Home = () => {
 
           <div
             onClick={scrollToFeatures}
-            className='flex items-center justify-center bg-blue-500 py-2 px-6 rounded-lg mt-10
-             text-white text-2xl font-bold hover:scale-105 transition-all duration-300 shadow-md cursor-pointer'
+            className='flex items-center justify-center bg-blue-500 py-2 px-3 md:px-5 rounded-lg mt-10
+             text-white text-md md:text-2xl font-bold hover:scale-105 transition-all duration-300 shadow-md cursor-pointer'
           >
-            <img src="./home/yala-pena.png" alt="" className='w-15 mr-5' />
+            <img src="./home/yala-pena.png" alt="" className='w-8 md:w-15 mr-5' />
             <button className=''>يلا بينا</button>
           </div>
         </div>
