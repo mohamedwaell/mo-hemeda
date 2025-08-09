@@ -36,7 +36,7 @@ const Fetures = () => {
 
 
   return (
-    <section className='mb-30'>
+    <section className='h-screen'>
        <div className='flex justify-center flex-row my-10 text-center items-center gap-10 text-black dark:text-white'>
       <div className='w-1/4 md:w-1/3'>
         {IsMobile ? (
@@ -66,8 +66,8 @@ const Fetures = () => {
       {services.map((service) => {
         return (
           <div key={service.id} className= 'w-[300px] md:w-[350px] h-[300px] md:h-[350px] flex flex-col items-center justify-center text-center gap-10 p-5 mx-5 rounded-3xl bg-no-repeat bg-cover bg-contain ' style={{ backgroundImage: `url(${service.bg})` }}>
-            <img src={service.icon} className="w-20 md:w-35" alt="" />
-            <h1 className='text-2xl md:text-3xl text-black dark:text-white'>{service.description}</h1>
+            <img src={service.icon} className="w-20 md:w-40" alt="" />
+            <h1 className='text-2xl md:text-3xl text-white'>{service.description}</h1>
           </div>
         )
       })}

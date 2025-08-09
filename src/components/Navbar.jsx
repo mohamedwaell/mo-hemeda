@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Moon, Sun } from "lucide-react";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
@@ -30,22 +31,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 m-4  md:mx-50 px-4 rounded-xl flex justify-between items-center z-45 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 ">
-      <Link to="/" className="text-white text-2xl">
-       <img src='/home/face.png' className=' w-12 md:w-16 object-contain'></img>
-        {/* <img src='/home/logo-light.png' alt="logo" className="w-12 md:w-16 object-contain" /> */}
+    <nav className="fixed top-0 left-0 right-0 m-4 px-4 rounded-xl flex justify-between items-center z-45 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
+      <Link to="/" className="text-white text-2xl flex flex-row items-center">
+        <img src='/home/face.png' className='w-10 md:w-16 object-contain' alt="logo" />
+        <div className='w-[2px] md:w-1 md:h-12 h-8 bg-white'></div>
+        <div className='text-center ml-2 text-white text-[10px] md:text-sm font-bold'>
+          <p>over dose</p>
+          <p>math</p>
+        </div>
       </Link>
 
       <div className='flex items-center gap-4'>
         <button
-        onClick={toggleTheme}
-        className="relative w-16 flex items-center justify-center"
-      >
-       <img src='/home/navButton.gif' className='absolute w-20 object-contain'></img>
-      </button>
+          onClick={toggleTheme}
+          className="relative h-8 w-8 md:w-10 md:h-10  flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
+        >
+          {isDark ? (
+            <Moon className="w-5 h-5 text-white" />
+          ) : (
+            <Sun className="w-5 h-5 text-yellow-300" />
+          )}
+        </button>
 
+        <p className='text-white text-sm md:text-lg font-bold'>
+          {isDark ? 'dark' : 'light'}
+        </p>
       </div>
-      
     </nav>
   );
 };

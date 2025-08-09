@@ -44,20 +44,20 @@ export const services = [
   id:1,
   description:"شرح كامل مبسط للمنهج",
   bg:"/features/gray-bg.jpg",
-  icon:"/features/note.png"
+  icon:"/features/brain.png"
 },
 {
   id:2,
-  description:"شرح الرياضيات",
+  description:"مذكرات وملخصات بتنزل مجانا مع الفيديوهات",
   bg:"/features/blue-bg.jpg",
   icon:"/features/note.png"
 
 },
 {
   id:3,
-  description:"شرح الرياضيات",
+  description:"فيديوهات حل منفله للمسائل والافكار المميزه ",
   bg:"/features/gray-bg-2.jpg",
-  icon:"/features/note.png"
+  icon:"/features/lamp.png"
 
 },
 
