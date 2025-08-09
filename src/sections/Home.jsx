@@ -27,7 +27,7 @@ const Home = () => {
         </div>
 
         <div className='flex items-center justify-center flex-col h-full md:w-1/2 h-[50vh]'>
-          <h1 className='text-5xl md:text-6xl text-white mb-10 text-center md:text-right md:mr-10'>
+          <h1 className='text-5xl md:text-6xl text-white mb-5 md:mb-10 text-center md:text-right md:mr-10'>
             <span className='text-black dark:text-white'> الاستاذ </span>
             <span className='text-blue-500'>محمد حميده</span>
           </h1>
@@ -36,7 +36,7 @@ const Home = () => {
 
           <div
             onClick={scrollToFeatures}
-            className='flex items-center justify-center bg-blue-500 py-2 px-3 md:px-5 rounded-lg mt-10
+            className='flex items-center justify-center bg-blue-500 py-2 px-3 md:px-5 rounded-lg md:mt-10 mt-5
              text-white text-md md:text-2xl font-bold hover:scale-105 transition-all duration-300 shadow-md cursor-pointer'
           >
             <img src="./home/yala-pena.png" alt="" className='w-8 md:w-15 mr-5' />
