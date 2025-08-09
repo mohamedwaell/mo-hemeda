@@ -7,7 +7,7 @@ import { Grade } from '../const/index.js'
 
 const Grades = () => {
   return (
-    <section className='h-screen flex items-center justify-center'>
+    <section className='my-30'>
       <div className='flex flex-col  items-center justify-center gap-10  my-5 '>
         <h1 className='text-3xl md:text-5xl  text-green-500 text-center font-bold '>السنوات الدراسيه</h1>
         <div className='flex flex-col md:flex-row items-center justify-center gap-10 mx-0 md:mx-5 '>

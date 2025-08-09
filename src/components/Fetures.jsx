@@ -36,7 +36,7 @@ const Fetures = () => {
 
 
   return (
-    <section className='h-screen'>
+    <section>
        <div className='flex justify-center flex-row my-10 text-center items-center gap-10 text-black dark:text-white'>
       <div className='w-1/4 md:w-1/3'>
         {IsMobile ? (
