@@ -40,28 +40,25 @@ export const Grade = [
    
 ];
 export const services = [
-  {
-    id: 1,
-    title: "شرح كامل للمنهج",
-  },
-  // {
-  //   id: 2,
-  //   title: "مذكرات وملخصات المنهج بتنزل مجانا مع الفيديوهات",
-  // },
-  // {
-  //   id: 3,
-  //   title: "شرح أسئلة مستويات التفكير العليا والأسئلة والمسائل المميزة في ريليز على فيسبوك ويوتيوب",
-  // },
-  // {
-  //   id: 4,
-  //   title: "أي سؤال يقف معاك ابعتهولنا على أرقامنا وهنواصل معاك ونفهمهولك",
-  // },
-  // {
-  //   id: 5,
-  //   title: "قنوات تيليجرام بينزل عليها واجبك وأسئلة جديدة بشكل مستمر",
-  // },
-  // {
-  //   id: 6,
-  //   title: "كل ده وأكثر مجانا عبر حساباتنا على YouTube وFacebook",
-  // }
+{
+  id:1,
+  description:"شرح كامل مبسط للمنهج",
+  bg:"/features/gray-bg.jpg",
+  icon:"/features/note.png"
+},
+{
+  id:2,
+  description:"شرح الرياضيات",
+  bg:"/features/blue-bg.jpg",
+  icon:"/features/note.png"
+
+},
+{
+  id:3,
+  description:"شرح الرياضيات",
+  bg:"/features/gray-bg-2.jpg",
+  icon:"/features/note.png"
+
+},
+
 ];
