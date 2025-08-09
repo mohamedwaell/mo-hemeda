@@ -31,7 +31,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 m-4 px-4 rounded-xl flex justify-between items-center z-45 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
+    <nav className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-45 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
       <Link to="/" className="text-white text-2xl flex flex-row items-center">
         <img src='/home/face.png' className='w-10 md:w-16 object-contain' alt="logo" />
         <div className='w-[2px] md:w-1 md:h-12 h-8 bg-white'></div>
