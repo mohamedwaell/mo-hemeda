@@ -17,12 +17,12 @@ const Home = () => {
     <>
       <Navbar />
 
-      <div className='flex flex-col items-center justify-between lg:flex-row overflow-hidden min-h-screen'>
-        <div className='flex items-center justify-center h-full lg:w-1/2 p-4'>
+      <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row overflow-hidden min-h-screen'>
+        <div className='flex items-center justify-center h-full lg:w-1/2'>
           <img
             src="./home/hero.png"
             alt=""
-            className='w-full lg:w-[80%] rounded-full hover:scale-105 transition-transform duration-500'
+            className='w-full lg:w-[85%] rounded-full hover:scale-105 transition-transform duration-500'
           />
         </div>
 
