@@ -62,7 +62,7 @@ const Fetures = () => {
       <h1 className='text-3xl md:text-7xl text-black dark:text-white'> <span className='text-blue-500'>?..</span> خدماتنا</h1>
 
     </div>
-    <div className='flex flex-col md:flex-row gap-10 items-center justify-center'>
+    <div className='flex flex-col lg:flex-row gap-10 items-center justify-center'>
       {services.map((service) => {
         return (
           <div key={service.id} className= 'w-[300px] md:w-[350px] h-[300px] md:h-[350px] flex flex-col items-center justify-center text-center gap-10 p-5 mx-5 rounded-3xl bg-no-repeat bg-cover bg-contain ' style={{ backgroundImage: `url(${service.bg})` }}>
