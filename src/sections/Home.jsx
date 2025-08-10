@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <Navbar />
 
-      <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row overflow-hidden min-h-screen'>
+      <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen'>
         <div className='flex items-center justify-center h-full lg:w-1/2'>
           <img
             src="./home/hero.png"
