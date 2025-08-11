@@ -20,9 +20,6 @@ const Scene = ({ isMobile }) => {
   return (
     <>
       <hemisphereLight args={[0x0099ff, 0xaa5500, 1]} position={[0, 5, 0]} />
-
-      {/* Add a directional fill so shadows/highlights show better */}
-      {/* <directionalLight intensity={0.3} position={[5, 5, 5]} /> */}
       <ambientLight intensity={0.5} />
       <group position={[0, 0, 0]} scale={0.02} ref={ref}>
         <Book />
@@ -46,48 +43,40 @@ const Fetures = () => {
 
   useGSAP(() => {
     if (!scrollRef.current) return;
-     
+
+    // Title animation
     gsap.fromTo(
       href.current,
-      {
-        opacity: 0,
-        x: -500,
-        delay: 2
-      },
+      { opacity: 0, x: -100 },
       {
         opacity: 1,
         x: 0,
-        duration: 2,
-        ease: "power2.out",
+        ease: "power3.out",
         scrollTrigger: {
           trigger: href.current,
-          start: "top bottom", 
-          end: "top 50%",
-          scrub: true,
+          start: "top 80%",  // start earlier
+          end: "top 30%",    // longer distance for smooth feel
+          scrub: 1,          // smooth following
         },
       }
-    )
+    );
+
+    // Cards animation
     const boxes = gsap.utils.toArray(scrollRef.current.children);
     boxes.forEach((box) => {
       gsap.fromTo(
         box,
-        {
-          opacity: 0,
-          y: 100, 
-          scale: 0.5,
-        delay: 4
-         
-        },
+        { opacity: 0, y: 100, scale: 0.9 },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          ease: "power2.out",
+          ease: "power3.out",
           scrollTrigger: {
             trigger: box,
-            start: "top bottom", // start when box is near viewport
-            end: "top 50%",
-            scrub: true,
+            start: "top 85%",
+            end: "top 40%",
+            scrub: 1.2, // even smoother
           },
         }
       );
@@ -100,8 +89,11 @@ const Fetures = () => {
 
   return (
     <section>
-      <div className="flex justify-center flex-row my-10 text-center items-center gap-10 text-black dark:text-white" ref={href}>
-        <div className="w-1/4 md:w-1/3" >
+      <div
+        className="flex justify-center flex-row my-10 text-center items-center gap-10 text-black dark:text-white"
+        ref={href}
+      >
+        <div className="w-1/4 md:w-1/3">
           <Canvas
             camera={{
               position: isMobile ? [0, 0, 13] : [0, 0, 9],
