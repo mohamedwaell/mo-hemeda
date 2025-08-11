@@ -48,7 +48,7 @@ const Footer = () => {
           <img
             src="/home/face.png"
             alt=""
-            className="w-20 md:w-50 cursor-pointer hover:scale-110 duration-500 footer-link"
+            className="card w-20 md:w-50 cursor-pointer hover:scale-110 duration-500 footer-link"
           />
           <h1 className="text-2xl md:text-3xl text-white text-center md:text-right footer-link">
             <span className="text-white"> الاستاذ </span>
@@ -76,7 +76,7 @@ const Footer = () => {
                   <img
                     src={social.icon}
                     alt={social.name}
-                    className="w-8 md:w-10 object-contain hover:scale-110 transition duration-300 ease-in-out"
+                    className="shake w-8 md:w-10 object-contain hover:scale-110 transition duration-300 ease-in-out"
                   />
                   <p className="text-gray-200 text-[10px]">{social.name}</p>
                 </a>

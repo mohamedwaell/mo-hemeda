@@ -123,7 +123,7 @@ const Fetures = () => {
             className="w-[300px] md:w-[350px] h-[300px] md:h-[350px] flex flex-col items-center justify-center text-center gap-10 p-5 mx-5 rounded-3xl bg-no-repeat bg-cover bg-contain"
             style={{ backgroundImage: `url(${service.bg})` }}
           >
-            <img src={service.icon} className="w-30 md:w-40" alt="" />
+            <img src={service.icon} className="card w-30 md:w-40" alt="" />
             <h1 className="text-2xl md:text-3xl text-white">
               {service.description}
             </h1>

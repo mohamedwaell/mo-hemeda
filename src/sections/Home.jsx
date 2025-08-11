@@ -68,11 +68,11 @@ const Home = () => {
 
           <div
             onClick={scrollToFeatures}
-            className='flex items-center justify-center bg-blue-500 py-2 px-4 md:px-6 rounded-lg mt-5 md:mt-10
+            className='shake flex items-center justify-center bg-blue-500 py-2 px-4 md:px-6 rounded-lg mt-5 md:mt-10
              text-white text-lg md:text-2xl font-bold hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer'
           >
             <img src="./home/yala-pena.png" alt="" className='w-8 md:w-12 mr-4' />
-            <button>يلا بينا</button>
+            <button >يلا بينا</button>
           </div>
         </div>
       </div>
