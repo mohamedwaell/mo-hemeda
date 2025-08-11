@@ -22,14 +22,13 @@ const Home = () => {
     // const split = new SplitText(splitRef.current, { type: 'words,chars' });
 
     // Step 2: animate sections first
-    timeLine
-      .fromTo("#home", { opacity: 0, x: -400 }, { opacity: 1, duration: 1, x: 0 })
-      .fromTo("#text", { opacity: 0, x: 400 }, { opacity: 1, duration: 1, x: 0 })
+    timeLine.fromTo("#home", { opacity: 0, x: -400 }, { opacity: 1, duration: 2, x: 0 , ease: "power2.out" ,delay: 3})
+      timeLine.fromTo("#text", { opacity: 0, x: 400 }, { opacity: 1, duration: 2, x: 0  , ease: "power2.out" })
       
-      .from(".split", {
+      timeLine.from(".split", {
         x: 150,
         opacity: 0,
-        duration: 0.7,
+        duration: 1.5,
         ease: "power4",
         stagger: 0.04
       });

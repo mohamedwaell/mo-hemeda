@@ -17,7 +17,7 @@ const WhatsAppButton = () => {
     <button
       onClick={handleClick}
       aria-label="Open WhatsApp chat"
-      className="fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-xl transform transition-all duration-200
+      className="fixed bottom-5 right-5 z-45 flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-xl transform transition-all duration-200
                  focus:outline-none focus:ring-4 focus:ring-green-300
                  hover:scale-105"
       title="تواصل عبر واتساب"
