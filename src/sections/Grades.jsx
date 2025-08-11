@@ -23,6 +23,7 @@ const Grades = () => {
         {
           opacity: 0,
           x: 400,
+          delay: 2
         },
         {
           opacity: 1,
@@ -45,8 +46,7 @@ const Grades = () => {
             opacity: 0,
             y: 100, 
             scale: 0.5,
-            rotation: -90,
-          
+          delay:4
            
           },
           {
@@ -54,7 +54,6 @@ const Grades = () => {
             y: 0,
             scale: 1,
            duration: 3,
-           rotation: 0,
             ease: "power2.out",
             scrollTrigger: {
               trigger: box,

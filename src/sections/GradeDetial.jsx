@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Grade } from '../const/index.js';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
+import WhatsAppButton from '../components/WhatsAppButton.jsx';
 const GradeDetial = () => {
   const { name } = useParams();
   const matchedGrade = Grade.find((grade) => grade.name === name);
@@ -10,6 +11,7 @@ const GradeDetial = () => {
   return (
     <section >
       <Navbar />
+      <WhatsAppButton />
       <div className='flex flex-col items-center justify-center gap-10 h-[100vh] '>
 
         <img src={matchedGrade.photo} className="w-50 md:w-80 rounded-xl" alt="" />

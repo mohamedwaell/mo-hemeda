@@ -19,7 +19,11 @@ const Scene = ({ isMobile }) => {
 
   return (
     <>
-      <ambientLight />
+      <hemisphereLight args={[0x0099ff, 0xaa5500, 1]} position={[0, 5, 0]} />
+
+      {/* Add a directional fill so shadows/highlights show better */}
+      {/* <directionalLight intensity={0.3} position={[5, 5, 5]} /> */}
+      <ambientLight intensity={0.5} />
       <group position={[0, 0, 0]} scale={0.02} ref={ref}>
         <Book />
       </group>
@@ -48,11 +52,12 @@ const Fetures = () => {
       {
         opacity: 0,
         x: -500,
+        delay: 2
       },
       {
         opacity: 1,
         x: 0,
-        duration: 3,
+        duration: 2,
         ease: "power2.out",
         scrollTrigger: {
           trigger: href.current,
@@ -70,16 +75,13 @@ const Fetures = () => {
           opacity: 0,
           y: 100, 
           scale: 0.5,
-          rotation: 90,
-        
+        delay: 4
          
         },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-         duration: 3,
-         rotation: 0,
           ease: "power2.out",
           scrollTrigger: {
             trigger: box,

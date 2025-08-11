@@ -8,6 +8,7 @@ import Grades from './Grades';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
+import WhatsAppButton from '../components/WhatsAppButton';
 
 gsap.registerPlugin(SplitText);
 
@@ -46,7 +47,6 @@ const Home = () => {
     <>
         
       <Navbar />
-
       <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen overflow-hidden w-full'>
         <div id='home' className='flex items-center justify-center h-full lg:w-1/2'>
           <img
@@ -83,6 +83,8 @@ const Home = () => {
       </div>
 
       <Grades />
+      <WhatsAppButton />
+
       <Footer />
     </>
   );
