@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Moon, Sun } from "lucide-react";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
+  const navRef = useRef(null); // ✅ safer than using #id
 
   useEffect(() => {
     const root = document.documentElement;
-
-    // Check saved theme or fallback to system
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -30,8 +31,22 @@ const Navbar = () => {
     setIsDark(!isDark);
   };
 
+  // ✅ Animate navbar once on mount
+  useGSAP(() => {
+    if (navRef.current) {
+      gsap.fromTo(
+        navRef.current,
+        { opacity: 0, y: -50 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power1.inOut' }
+      );
+    }
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-45 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
+    <nav
+      ref={navRef}
+      className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-50 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
+    >
       <Link to="/" className="text-white text-2xl flex flex-row items-center">
         <img src='/home/face.png' className='w-10 md:w-16 object-contain' alt="logo" />
         <div className='w-[2px] md:w-1 md:h-12 h-8 bg-white'></div>
@@ -44,7 +59,7 @@ const Navbar = () => {
       <div className='flex items-center gap-4'>
         <button
           onClick={toggleTheme}
-          className="relative h-8 w-8 md:w-10 md:h-10  flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
+          className="relative h-8 w-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
         >
           {isDark ? (
             <Moon className="w-5 h-5 text-white" />

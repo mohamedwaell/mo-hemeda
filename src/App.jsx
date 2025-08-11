@@ -24,17 +24,16 @@ const App = () => {
     return () => window.removeEventListener("load", handleLoad);
   }, []);
 
-  return (
-    <>
-      <div
-        className={`fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700 ${
-          loading ? "opacity-100 pointer-events-auto z-50" : "opacity-0 pointer-events-none"
-        } ${visible ? "" : "hidden"}`}
-      >
+  if(loading && visible){
+    return (
+      <div className="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center bg-white dark:bg-black transition-opacity duration-700 opacity-100 pointer-events-auto z-50">
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50" />
       </div>
-
-      {/* Main App */}
+    )
+  }
+  return (
+    <>
+    
       <Router>
         <ScrollToTop />
         <Routes>

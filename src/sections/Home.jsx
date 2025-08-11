@@ -5,9 +5,38 @@ import Typewriter from '../components/Text';
 import Footer from '../components/Footer';
 import Fetures from '../components/Fetures';
 import Grades from './Grades';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/all';
+
+gsap.registerPlugin(SplitText);
 
 const Home = () => {
+  const timeLine = gsap.timeline();
+  const splitRef = useRef(null); // reference for split text
   const featuresRef = useRef(null);
+
+  useGSAP(() => {
+    // Step 1: create split instance after element exists
+    // const split = new SplitText(splitRef.current, { type: 'words,chars' });
+
+    // Step 2: animate sections first
+    timeLine
+      .fromTo("#home", { opacity: 0, x: -400 }, { opacity: 1, duration: 1, x: 0 })
+      .fromTo("#text", { opacity: 0, x: 400 }, { opacity: 1, duration: 1, x: 0 })
+      
+      .from(".split", {
+        x: 150,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power4",
+        stagger: 0.04
+      });
+
+    // return () => {
+    //   split.revert(); 
+    // };
+  });
 
   const scrollToFeatures = () => {
     featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -15,10 +44,11 @@ const Home = () => {
 
   return (
     <>
+        
       <Navbar />
 
-      <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen'>
-        <div className='flex items-center justify-center h-full lg:w-1/2'>
+      <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen overflow-hidden w-full'>
+        <div id='home' className='flex items-center justify-center h-full lg:w-1/2'>
           <img
             src="./home/hero.png"
             alt=""
@@ -26,8 +56,11 @@ const Home = () => {
           />
         </div>
 
-        <div className='flex items-center justify-center flex-col h-full lg:w-1/2 p-4'>
-          <h1 className='text-4xl lg:text-6xl text-white mb-5 lg:mb-10 text-center lg:text-right'>
+        <div id='text' className='flex items-center justify-center flex-col h-full lg:w-1/2 p-4'>
+          <h1
+            ref={splitRef} 
+            className='split text-4xl lg:text-6xl text-white mb-5 lg:mb-10 text-center lg:text-right'
+          >
             <span className='text-black dark:text-white'> الاستاذ </span>
             <span className='text-blue-500'>محمد حميده</span>
           </h1>
@@ -56,4 +89,3 @@ const Home = () => {
 };
 
 export default Home;
-

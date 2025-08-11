@@ -1,16 +1,81 @@
 import React from 'react'
+import  {  useRef } from "react";
 
 import { Link } from 'react-router-dom'
 import { Grade } from '../const/index.js'
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 const Grades = () => {
+
+  const scrollRef = useRef(null);
+  const href = useRef(null);
+  
+    useGSAP(() => {
+      if (!scrollRef.current) return;
+  
+      gsap.fromTo(
+        href.current,
+        {
+          opacity: 0,
+          x: 400,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: href.current,
+            start: "bottom bottom", // start when box is near viewport
+            end: "top 30%",
+            scrub: true,
+          },
+        }
+      );
+      const boxes = gsap.utils.toArray(scrollRef.current.children);
+      boxes.forEach((box) => {
+        gsap.fromTo(
+          box,
+          {
+            opacity: 0,
+            y: 100, 
+            scale: 0.5,
+            rotation: -90,
+          
+           
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+           duration: 3,
+           rotation: 0,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: box,
+              start: "top bottom", // start when box is near viewport
+              end: "top 50%",
+              scrub: true,
+            },
+          }
+        );
+      });
+  
+      return () => {
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      };
+    }, []);
+  
   return (
-    <section className='my-30'>
-      <div className='flex flex-col items-center justify-center gap-10 my-5 md:my-10'>
-        <h1 className='text-3xl md:text-5xl text-green-500 text-center font-bold '>السنوات الدراسيه</h1>
-        <div className='flex flex-wrap items-center justify-center  gap-5 md:gap-10 mx-5 md:mx-10'>
+    <section className='my-30 w-full overflow-hidden'>
+      <div className='flex flex-col items-center justify-center gap-20 my-5 md:my-10'>
+        <h1 className='text-3xl md:text-5xl text-green-500 text-center font-bold ' ref={href}>السنوات الدراسيه</h1>
+        <div className='flex flex-wrap items-center justify-center  gap-5 md:gap-10 mx-5 md:mx-10' ref={scrollRef}>
           {Grade.map((grade) => (
             <div key={grade.id} className='flex flex-col items-center justify-center'>
               <Link to={`/grades/${grade.name}`}>

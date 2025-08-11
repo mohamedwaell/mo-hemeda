@@ -3,12 +3,12 @@
 export const socialLinks = [
   {
     name: 'Facebook',
-    href: 'https://youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF',
+    href: 'https://www.facebook.com/share/16ynkDKjvJ/',
     icon: '/footer/facebook.png',
   },
   {
     name: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/mo7amed_7emeda/profilecard/?igsh=MWFoYnBvcjFocGUwdA==',
     icon: '/footer/instagram.png',
   },
   {
