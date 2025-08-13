@@ -19,6 +19,7 @@ body {
    @apply dark:bg-[#000] w-full overflow-x-hidden;
    font-family: 'MyFont', Courier, monospace;
    font-weight: 900;
+   scroll-behavior: smooth;
 
 }
 nav a,
