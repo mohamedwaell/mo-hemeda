@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Moon, Sun } from "lucide-react";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import Switch from './Switch';
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
-  const navRef = useRef(null); // ✅ safer than using #id
+  const navRef = useRef(null);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -31,13 +31,12 @@ const Navbar = () => {
     setIsDark(!isDark);
   };
 
-  // ✅ Animate navbar once on mount
   useGSAP(() => {
     if (navRef.current) {
       gsap.fromTo(
         navRef.current,
         { opacity: 0, y: -50 },
-        { opacity: 1, y: 0, duration: 2, ease: 'power1.inOut', delay: 2}
+        { opacity: 1, y: 0, duration: 2, ease: 'power1.inOut', delay: 2 }
       );
     }
   }, []);
@@ -45,8 +44,10 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-50 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
+      className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-50 
+                 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
     >
+      {/* Logo */}
       <Link to="/" className="text-white text-2xl flex flex-row items-center">
         <img src='/home/face.png' className='w-10 md:w-16 object-contain' alt="logo" />
         <div className='w-[2px] md:w-1 md:h-12 h-8 bg-white'></div>
@@ -56,17 +57,9 @@ const Navbar = () => {
         </div>
       </Link>
 
+      {/* Theme switch */}
       <div className='flex items-center gap-4'>
-        <button
-          onClick={toggleTheme}
-          className="relative h-8 w-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition"
-        >
-          {isDark ? (
-            <Moon className="w-5 h-5 text-white" />
-          ) : (
-            <Sun className="w-5 h-5 text-yellow-300" />
-          )}
-        </button>
+        <Switch isDark={isDark} toggleTheme={toggleTheme} />
 
         <p className='text-white text-sm md:text-lg font-bold'>
           {isDark ? 'dark' : 'light'}
