@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: #fff;
-   @apply dark:bg-[#000] w-full overflow-x-hidden;
+   @apply dark:bg-[#1A1A1A] w-full overflow-x-hidden;
    font-family: 'MyFont', Courier, monospace;
    font-weight: 900;
    scroll-behavior: smooth;
