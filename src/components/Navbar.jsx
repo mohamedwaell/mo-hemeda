@@ -45,7 +45,11 @@ const Navbar = () => {
     <nav
       ref={navRef}
       className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-40
-                 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
+                 bg-gradient-to-b 
+    from-[#0F818C] 
+    via-[#095259] 
+    via-64% 
+    to-[#042326]"
     >
       {/* Logo */}
       <Link to="/" className="text-white text-2xl flex flex-row items-center">
