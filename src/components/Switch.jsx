@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const Switch = ({ isDark, toggleTheme }) => {
   return (
+    <div className="scale-[70%] md:scale-100 translate-x-5 md:translate-x-0">
+
         <StyledWrapper>
       <label className="switch">
         <span className="sun">
@@ -30,6 +32,7 @@ const Switch = ({ isDark, toggleTheme }) => {
         <span className="slider" />
       </label>
     </StyledWrapper>
+    </div>
 
   );
 };
