@@ -1,49 +1,15 @@
-// import { useEffect } from "react";
 import { socialLinks } from "../const/index.js";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import * as FaIcons from "react-icons/fa";
-import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  useGSAP(() => {
-    gsap.fromTo(
-      ".footer",
-      { opacity: 0, y: 80 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".footer",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    gsap.fromTo(
-      ".footer-link",
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".footer",
-          start: "top 85%",
-        },
-      }
-    );
-  }, []);
+ 
 
   return (
-    <footer className="footer text-white pt-6 md:pt-0 pb-2 border-t-3 border-gray-600 bg-no-repeat bg-cover bg-contain bg-gradient-to-r from-blue-900 via-blue-600 to-blue-300">
+    <footer className="footer text-white pt-6 md:pt-0 pb-2 border-t-3 border-gray-600  bg-gradient-to-b 
+    from-[#0F818C] 
+    via-[#095259] 
+    via-64% 
+    to-[#042326]">
       <div className="flex items-center justify-center md:justify-around gap-5 flex-col md:flex-row w-full">
         <div className="flex flex-col items-center justify-center gap-5 border-b-5 border-green-500 md:border-0">
           <img
@@ -97,3 +63,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

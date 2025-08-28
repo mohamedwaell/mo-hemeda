@@ -1,14 +1,10 @@
 import React, { useRef } from 'react';
-import Navbar from '../components/Navbar';
-import { Link } from 'react-router-dom';
 import Typewriter from '../components/Text';
-import Footer from '../components/Footer';
 import Fetures from '../components/Fetures';
-import Grades from './Grades';
+import Grades from '../components/Grades';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
-import WhatsAppButton from '../components/WhatsAppButton';
 
 gsap.registerPlugin(SplitText);
 
@@ -22,16 +18,16 @@ const Home = () => {
     // const split = new SplitText(splitRef.current, { type: 'words,chars' });
 
     // Step 2: animate sections first
-    timeLine.fromTo("#home", { opacity: 0, x: -400 }, { opacity: 1, duration: 2, x: 0 , ease: "power2.out" ,delay: 2})
-      timeLine.fromTo("#text", { opacity: 0, x: 400 }, { opacity: 1, duration: 2, x: 0  , ease: "power2.out" })
-      
-      timeLine.from(".split", {
-        x: 150,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power4",
-        stagger: 0.04
-      });
+    timeLine.fromTo("#home", { opacity: 0, x: -400 }, { opacity: 1, duration: 2, x: 0, ease: "power2.out", delay: 1 })
+    timeLine.fromTo("#text", { opacity: 0, x: 400 }, { opacity: 1, duration: 2, x: 0, ease: "power2.out" })
+
+    timeLine.from(".split", {
+      x: 150,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power4",
+      stagger: 0.04
+    });
 
     // return () => {
     //   split.revert(); 
@@ -44,20 +40,19 @@ const Home = () => {
 
   return (
     <>
-        
-      <Navbar />
-      <div className='flex flex-col items-center justify-center gap-10 md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen overflow-hidden w-full'>
+
+      <div className='flex flex-col items-center justify-center  md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen overflow-hidden w-full'>
         <div id='home' className='flex items-center justify-center h-full lg:w-1/2'>
           <img
             src="./home/hero.png"
             alt=""
-            className='w-full lg:w-[85%] rounded-full hover:scale-105 transition-transform duration-500'
+            className='w-full md:w-[80%] rounded-full hover:scale-105 transition-transform duration-500 mt-20'
           />
         </div>
 
         <div id='text' className='flex items-center justify-center flex-col h-full lg:w-1/2 p-4'>
           <h1
-            ref={splitRef} 
+            ref={splitRef}
             className='split text-4xl lg:text-6xl text-white mb-5 lg:mb-10 text-center lg:text-right'
           >
             <span className='text-black dark:text-white'> الاستاذ </span>
@@ -82,9 +77,7 @@ const Home = () => {
       </div>
 
       <Grades />
-      <WhatsAppButton />
 
-      <Footer />
     </>
   );
 };

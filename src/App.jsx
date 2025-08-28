@@ -3,6 +3,11 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./sections/Home.jsx";
 import GradeDetial from "./sections/GradeDetial.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import WhatsAppButton from "./components/WhatsAppButton.jsx";
+import NotFound from "./sections/NotFound.jsx";
+
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(true);
@@ -36,11 +41,15 @@ const App = () => {
       {/* Main App */}
       <BrowserRouter>
         <ScrollToTop />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/grades/:name" element={<GradeDetial />} />
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
+        <WhatsAppButton />
+        <Footer />
       </BrowserRouter>
     </>
   );
