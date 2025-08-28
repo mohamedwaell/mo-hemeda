@@ -1,13 +1,14 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { socialLinks } from "../const/index.js";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as FaIcons from "react-icons/fa";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  useEffect(() => {
+  useGSAP(() => {
     gsap.fromTo(
       ".footer",
       { opacity: 0, y: 80 },
