@@ -1,14 +1,10 @@
 // Typewriter.js
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const texts = [
-  "ازيك  يا باشا عامل ايه 😊",
-  "مش كفايه لعب ويلا  نذاكر 🤓",
-  // "انا محمد ومعايا الرياضه ليها طعم تاني 😎",
-];
-
-const Typewriter = () => {
-  const [index, setIndex] = useState(0);     // current sentence index
+const Typewriter = ({
+  texts = ["ازيك  يا باشا عامل ايه 😊", "مش كفايه لعب ويلا  نذاكر 🤓"],
+}) => {
+  const [index, setIndex] = useState(0); // current sentence index
   const [subIndex, setSubIndex] = useState(0); // current character index
   const [deleting, setDeleting] = useState(false);
   const [blink, setBlink] = useState(true);
@@ -16,18 +12,19 @@ const Typewriter = () => {
   useEffect(() => {
     if (index >= texts.length) return;
 
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) =>
-        deleting ? prev - 1 : prev + 1
-      );
+    const timeout = setTimeout(
+      () => {
+        setSubIndex((prev) => (deleting ? prev - 1 : prev + 1));
 
-      if (!deleting && subIndex === texts[index].length) {
-        setTimeout(() => setDeleting(true), 1000);
-      } else if (deleting && subIndex === 0) {
-        setDeleting(false);
-        setIndex((prev) => (prev + 1) % texts.length);
-      }
-    }, deleting ? 50 : 100);
+        if (!deleting && subIndex === texts[index].length) {
+          setTimeout(() => setDeleting(true), 1000);
+        } else if (deleting && subIndex === 0) {
+          setDeleting(false);
+          setIndex((prev) => (prev + 1) % texts.length);
+        }
+      },
+      deleting ? 50 : 100
+    );
 
     return () => clearTimeout(timeout);
   }, [subIndex, deleting]);
@@ -43,7 +40,11 @@ const Typewriter = () => {
   return (
     <h1 className="text-xl md:text-4xl text-center text-black dark:text-white mx-2">
       {texts[index].substring(0, subIndex)}
-      <span className={`${blink ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
+      <span
+        className={`${blink ? "opacity-100" : "opacity-0"} transition-opacity`}
+      >
+        |
+      </span>
     </h1>
   );
 };

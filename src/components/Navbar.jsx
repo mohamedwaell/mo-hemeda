@@ -35,7 +35,7 @@ const Navbar = () => {
     if (navRef.current) {
       gsap.fromTo(
         navRef.current,
-        { opacity: 0, y: -50 },
+        { opacity: 0, y: -50, delay: 2 },
         { opacity: 1, y: 0, duration: 2, ease: 'power1.inOut' }
       );
     }

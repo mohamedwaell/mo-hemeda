@@ -24,8 +24,8 @@ const Grades = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: href.current,
-          start: "top 85%",
-          end: "top 40%",
+          start: "top 80%",
+          end: "top 30%",
           scrub: 1, // smooth follow
         },
       }
@@ -44,8 +44,8 @@ const Grades = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: box,
-            start: "top 85%",
-            end: "top 40%",
+            start: "top 80%",
+            end: "top 30%",
             scrub: 1.2, // extra glide
           },
         }
@@ -76,7 +76,7 @@ const Grades = () => {
               key={grade.id}
               className="flex flex-col items-center justify-center"
             >
-              <Link to={`/grades/${grade.name}`}>
+              <Link to={`/grades/${grade.params}`}>
                 <div className="flex flex-col mb-10 cursor-pointer">
                   <div className="group rounded-xl overflow-hidden aspect-w-16 aspect-h-9 w-[300px] lg:w-[400px] md:w-[550px]">
                     <img
@@ -86,7 +86,7 @@ const Grades = () => {
                     />
                   </div>
 
-                  <div className="group px-4 mx-4 md:px-8 py-4 rounded-md -mt-10 bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-200 z-10 hover:scale-105 duration-500">
+                  <div className="flex flex-col items-center justify-center px-4 mx-2 md:px-8 py-4 rounded-md -mt-10 bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-200 z-10 hover:scale-105 duration-500">
                     <h1 className="text-center text-lg md:text-4xl lg:text-3xl">
                       {grade.name}
                     </h1>
@@ -106,3 +106,4 @@ const Grades = () => {
 };
 
 export default Grades;
+
