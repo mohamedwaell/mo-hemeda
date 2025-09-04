@@ -24,8 +24,8 @@ const Grades = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: href.current,
-          start: "top 80%",
-          end: "top 30%",
+          start: "top 85%",
+          end: "top 40%",
           scrub: 1, // smooth follow
         },
       }
@@ -44,8 +44,8 @@ const Grades = () => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: box,
-            start: "top 80%",
-            end: "top 30%",
+            start: "top 85%",
+            end: "top 40%",
             scrub: 1.2, // extra glide
           },
         }
@@ -106,4 +106,3 @@ const Grades = () => {
 };
 
 export default Grades;
-
