@@ -24,7 +24,7 @@ const Socail = (grade) => {
           trigger: href.current,
           start: "top 85%",
           end: "top 40%",
-          scrub: 1, // smooth follow
+          scrub: 1,
         },
       }
     );
@@ -44,7 +44,7 @@ const Socail = (grade) => {
             trigger: box,
             start: "top 85%",
             end: "top 40%",
-            scrub: 1.2, // extra glide
+            scrub: 1.2,
           },
         }
       );
@@ -55,8 +55,33 @@ const Socail = (grade) => {
     };
   }, []);
 
+  const cards = [
+    {
+      id: 1,
+      title: "يوتيوب",
+      img: grade.youtubeImage, // top image for YouTube
+      link: grade.youtubeLink,
+      points: [
+        "هنا هتلاقو شرح مفصل و مبسط علي كل درس",
+        "فيديو حل بعد كل درس عشان تطبيق",
+        "فيديوهات لحل مسائل التفكير العليا",
+      ],
+    },
+    {
+      id: 2,
+      title: "تليجرام",
+      img: grade.telegramImage, // top image for Telegram
+      link: grade.telegramLink,
+      points: [
+        "هنا بينزل مواعيد نزول الفيديوهات",
+        "اي PDF شرح او مذكره بتنزل هناك",
+        "واجبات مستمره وحلها",
+        "تقدر نتواصل هناك عن فيديوهات انتو عايزينها",
+      ],
+    },
+  ];
   return (
-    <section className="my-30 w-full overflow-hidden">
+    <section className="my-20 w-full overflow-hidden">
       <div className="flex flex-col items-center justify-center gap-20 my-5 md:my-10">
         <h1
           className="text-3xl md:text-5xl text-green-500 text-center font-bold"
@@ -66,57 +91,43 @@ const Socail = (grade) => {
         </h1>
 
         <div
-          className="flex flex-wrap items-center justify-center gap-5 md:gap-10 mx-5 md:mx-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 w-11/12 max-w-6xl"
           ref={scrollRef}
         >
-          <a
-            href={grade.youtubeLink}
-            className="flex flex-col items-center justify-center"
-          >
-            <div className="flex flex-col mb-10 cursor-pointer">
-              <div className="group rounded-xl overflow-hidden aspect-w-16 aspect-h-9 w-[300px] lg:w-[400px] md:w-[550px] ">
-                <img
-                  src={grade.youtubeImage}
-                  className="w-full h-full object-cover transform group-hover:scale-110 duration-500 ease-in-out grayscale-30 hover:grayscale-0"
-                  alt=""
-                />
-              </div>
+          {cards.map((card) => (
+            <div
+              key={card.id}
+              className=" bg-gray-300 dark:bg-gray-800 rounded-2xl overflow-hidden flex flex-col items-center justify-between hover:scale-105 duration-500 pb-4"
+            >
+              {/* Top Image */}
+              <img
+                src={card.img}
+                alt={card.title}
+                className="w-full  object-cover"
+              />
 
-              <div className="flex flex-col items-center justify-center px-2 mx-10 py-2 md:px-4 md:mx-2 md:px-8 md:py-4 lg:px-2 lg:mx-6 lg:py-2 rounded-md -mt-10 bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-200 z-10 hover:scale-105 duration-500">
-                <h1 className="text-center text-sm md:text-3xl lg:text-xl">
-                  هنا هتلاقي المحتوي الدراسي
-                </h1>
-                <div className="w-full h-1 bg-[#c4d14f] my-2"></div>
-                <h1 className="text-center text-[10px] md:text-xl lg:text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
-                  دروس {grade.name}
-                </h1>
+              {/* Content */}
+              <div className="flex flex-col items-center justify-start gap-4  p-4 text-center w-full h-full  ">
+                <h3 className="text-3xl font-bold  bg-[linear-gradient(to_bottom,#005A61_0%,#008A94_50%,#00B9C7_100%)] bg-clip-text text-transparent">
+                  : {card.title}
+                </h3>
+                <ul className="">
+                  {card.points.map((point, i) => (
+                    <li key={i} className=" text-black dark:text-white">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
+              <a
+                href={card.link}
+                target="_blank"
+                className="px-6 py-2 bg-[linear-gradient(to_bottom,#0F818C_0%,#095259_40%,#073A40_64%,#042326_100%)] text-white font-bold rounded-lg shadow-md transition"
+              >
+                الدخول
+              </a>
             </div>
-          </a>
-          <a
-            href={grade.telegramLink}
-            className="flex flex-col items-center justify-center"
-          >
-            <div className="flex flex-col mb-10 cursor-pointer">
-              <div className="group rounded-xl overflow-hidden aspect-w-16 aspect-h-9 w-[300px] lg:w-[400px] md:w-[550px]">
-                <img
-                  src={grade.telegramImage}
-                  className="w-full h-full object-cover transform group-hover:scale-110 duration-500 ease-in-out grayscale-30 hover:grayscale-0"
-                  alt=""
-                />
-              </div>
-
-              <div className="flex flex-col items-center justify-center px-2 mx-10 py-2 md:px-4 md:mx-2 md:px-8 md:py-4  lg:px-2 lg:mx-6 lg:py-2 rounded-md -mt-10 bg-gray-100 dark:bg-gray-900 text-black dark:text-gray-200 z-10 hover:scale-105 duration-500">
-                <h1 className="text-center text-sm md:text-3xl lg:text-xl">
-                  جروب التليجرام الخاص بيك
-                </h1>
-                <div className="w-full h-1 bg-[#c4d14f] my-2"></div>
-                <h1 className="text-center text-[10px] md:text-xl lg:text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">
-                  دروس {grade.name}
-                </h1>
-              </div>
-            </div>
-          </a>
+          ))}
         </div>
       </div>
     </section>
