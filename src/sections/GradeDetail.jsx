@@ -20,8 +20,9 @@ const GradeDetial = () => {
           image={"/grades/hero.png"}
         />
       </div>
-
-      <Socail {...matchedGrade} ref={scrollRef} />
+      <div ref={scrollRef}>
+        <Socail {...matchedGrade} />
+      </div>
     </section>
   );
 };
