@@ -21,7 +21,7 @@ const GradeDetial = () => {
         />
       </div>
 
-      <Socail {...matchedGrade} />
+      <Socail {...matchedGrade} ref={scrollRef} />
     </section>
   );
 };
