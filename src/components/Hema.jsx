@@ -37,7 +37,7 @@ const Hema = ({ scrollToFeatures, text, image }) => {
           <img
             src={image}
             alt=""
-            className="h-[50vh] md:h-[80vh] object-cover rounded-full hover:scale-105 transition-transform duration-500 mt-20"
+            className="h-[50vh] lg:h-[80vh] object-cover rounded-full hover:scale-105 transition-transform duration-500 mt-20"
           />
         </div>
 

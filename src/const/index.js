@@ -21,18 +21,33 @@ export const Grade = [
     params: "firstYear",
     name: "الصف الاول الاعدادي",
     photo: "/grades/grade-1.jpg",
+    youtubeLink:
+      "https://www.youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF",
+    telegramLink: "https://t.me/mo7amed_7emeda",
+    youtubeImage: "/grades/youtube-1.jpg",
+    telegramImage: "/grades/tele-1.jpg",
   },
   {
     id: 2,
     params: "secondYear",
     name: "الصف الثاني الاعدادي",
     photo: "/grades/grade-2.jpg",
+    youtubeLink:
+      "https://www.youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF",
+    telegramLink: "https://t.me/mo7amed_7emeda",
+    youtubeImage: "/grades/youtube-2.jpg",
+    telegramImage: "/grades/tele-2.jpg",
   },
   {
     id: 3,
     params: "thirdYear",
     name: "الصف الثالث الاعدادي",
     photo: "/grades/grade-3.jpg",
+    youtubeLink:
+      "https://www.youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF",
+    telegramLink: "https://t.me/mo7amed_7emeda",
+    youtubeImage: "/grades/youtube-3.jpg",
+    telegramImage: "/grades/tele-3.jpg",
   },
 ];
 export const services = [
