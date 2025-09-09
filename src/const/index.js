@@ -22,8 +22,8 @@ export const Grade = [
     name: "الصف الاول الاعدادي",
     photo: "/grades/grade-1.jpg",
     youtubeLink:
-      "https://www.youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF",
-    telegramLink: "https://t.me/mo7amed_7emeda",
+      "https://youtube.com/playlist?list=PL2yOLMniHHlyxWJdcyFcjr5Asu5YqLmRR&si=dzsh1gGg5mx2YvKY",
+    telegramLink: "https://t.me/first1preparatory",
     youtubeImage: "/grades/youtube-1.jpg",
     telegramImage: "/grades/tele-1.jpg",
   },
@@ -34,7 +34,7 @@ export const Grade = [
     photo: "/grades/grade-2.jpg",
     youtubeLink:
       "https://www.youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF",
-    telegramLink: "https://t.me/mo7amed_7emeda",
+    telegramLink: "https://t.me/Second2Preparatory",
     youtubeImage: "/grades/youtube-2.jpg",
     telegramImage: "/grades/tele-2.jpg",
   },
@@ -44,8 +44,8 @@ export const Grade = [
     name: "الصف الثالث الاعدادي",
     photo: "/grades/grade-3.jpg",
     youtubeLink:
-      "https://www.youtube.com/channel/UCM510Z-nKg6ar5eofLvUiNQ?si=Ic4_WmncRjEpArlF",
-    telegramLink: "https://t.me/mo7amed_7emeda",
+      "https://youtube.com/playlist?list=PL2yOLMniHHlywva95RCqOC7qWIpNei_8Z&si=53TS_wCo29LJaghx",
+    telegramLink: "https://t.me/overdose3p",
     youtubeImage: "/grades/youtube-3.jpg",
     telegramImage: "/grades/tele-3.jpg",
   },
@@ -65,7 +65,7 @@ export const services = [
   },
   {
     id: 3,
-    description: "فيديوهات حل منفله للمسائل والافكار المميزه ",
+    description: "فيديوهات حل منفصله للمسائل والافكار المميزه ",
     bg: "/features/gray-bg-2.jpg",
     icon: "/features/lamp.png",
   },
