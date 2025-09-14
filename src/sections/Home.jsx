@@ -3,6 +3,7 @@ import Fetures from "../components/Fetures";
 import Grades from "../components/Grades";
 import Hema from "../components/Hema";
 import { questionsData } from "../const/exams";
+import { Link } from "react-router-dom";
 const Home = () => {
   const featuresRef = useRef(null);
   const scrollToFeatures = () => {
@@ -60,12 +61,12 @@ const Home = () => {
             </ul>
           </div>
 
-          <a
-            href="/exam"
+          <Link
+            to="/exam"
             className="px-8 py-4 bg-indigo-600 text-white dark:text-gray-200 font-bold rounded-lg shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-all duration-200 text-lg"
           >
             بدء الامتحان
-          </a>
+          </Link>
         </div>
       </div>
     </>

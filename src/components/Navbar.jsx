@@ -69,13 +69,6 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <div className="flex items-center gap-4">
-        <Link
-          to="/exam"
-          className="text-white text-sm md:text-lg font-bold hover:text-blue-200 transition-colors duration-200"
-        >
-          الامتحان
-        </Link>
-
         <Switch isDark={isDark} toggleTheme={toggleTheme} />
 
         <p className="text-white text-sm md:text-lg font-bold">
