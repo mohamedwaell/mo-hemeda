@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import NotFound from "./sections/NotFound.jsx";
+import ExamComponent from "./components/Exams.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -48,6 +49,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/grades/:params" element={<GradeDetial />} />
+          <Route
+            path="/exam"
+            element={
+              <div className="min-h-screen w-full mt-20 md:mt-30">
+                <ExamComponent />
+              </div>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />
