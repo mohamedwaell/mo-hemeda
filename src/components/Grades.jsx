@@ -1,61 +1,11 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Grade } from "../const/index.js";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import gsap from "gsap";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Grades = () => {
   const scrollRef = useRef(null);
   const href = useRef(null);
-
-  useGSAP(() => {
-    if (!scrollRef.current) return;
-
-    // Title animation
-    gsap.fromTo(
-      href.current,
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: href.current,
-          start: "top 85%",
-          end: "top 40%",
-          scrub: 1, // smooth follow
-        },
-      }
-    );
-
-    // Cards animation
-    const boxes = gsap.utils.toArray(scrollRef.current.children);
-    boxes.forEach((box) => {
-      gsap.fromTo(
-        box,
-        { opacity: 0, y: 80, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: box,
-            start: "top 85%",
-            end: "top 40%",
-            scrub: 1.2, // extra glide
-          },
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
     <section className="my-30 w-full overflow-hidden">

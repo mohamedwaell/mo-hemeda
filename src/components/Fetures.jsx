@@ -3,11 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Book from "./Book.jsx";
 import { services } from "../const/index.js";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import gsap from "gsap";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Scene = ({ isMobile }) => {
   const ref = useRef();
@@ -40,52 +36,6 @@ const Fetures = () => {
 
   const scrollRef = useRef(null);
   const href = useRef(null);
-
-  useGSAP(() => {
-    if (!scrollRef.current) return;
-
-    // Title animation
-    gsap.fromTo(
-      href.current,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: href.current,
-          start: "top 80%",  // start earlier
-          end: "top 30%",    // longer distance for smooth feel
-          scrub: 1,          // smooth following
-        },
-      }
-    );
-
-    // Cards animation
-    const boxes = gsap.utils.toArray(scrollRef.current.children);
-    boxes.forEach((box) => {
-      gsap.fromTo(
-        box,
-        { opacity: 0, y: 100, scale: 0.9 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: box,
-            start: "top 85%",
-            end: "top 40%",
-            scrub: 1.2, // even smoother
-          },
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
     <section>
