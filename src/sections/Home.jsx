@@ -2,6 +2,7 @@ import { useRef } from "react";
 import Fetures from "../components/Fetures";
 import Grades from "../components/Grades";
 import Hema from "../components/Hema";
+import Exams from "../components/Exams";
 
 const Home = () => {
   const featuresRef = useRef(null);
@@ -12,13 +13,18 @@ const Home = () => {
 
   return (
     <>
-      <Hema scrollToFeatures={scrollToFeatures} text={["ازيك  يا باشا عامل ايه 😊", "مش كفايه لعب ويلا  نذاكر 🤓"]} image={'/home/hero.png'} />
+      <Hema
+        scrollToFeatures={scrollToFeatures}
+        text={["ازيك  يا باشا عامل ايه 😊", "مش كفايه لعب ويلا  نذاكر 🤓"]}
+        image={"/home/hero.png"}
+      />
 
       <div ref={featuresRef}>
         <Fetures />
       </div>
 
       <Grades />
+      <Exams />
     </>
   );
 };
