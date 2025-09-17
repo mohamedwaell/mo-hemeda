@@ -8,6 +8,7 @@ import Footer from "./components/Footer.jsx";
 import WhatsAppButton from "./components/WhatsAppButton.jsx";
 import NotFound from "./sections/NotFound.jsx";
 import ExamComponent from "./components/Exams.jsx";
+import { exam1, exam2, exam3 } from "./const/exams";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -48,12 +49,31 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/grades/:params" element={<GradeDetial />} />
           <Route
-            path="/exam"
+            path="/grades/:params"
+            element={<GradeDetial id1={exam1} id2={exam2} id3={exam3} />}
+          />
+          <Route
+            path="/exam1"
             element={
               <div className="min-h-screen w-full mt-20 md:mt-30">
-                <ExamComponent />
+                <ExamComponent questionsData={exam1.questions} />
+              </div>
+            }
+          />
+          <Route
+            path="/exam2"
+            element={
+              <div className="min-h-screen w-full mt-20 md:mt-30">
+                <ExamComponent questionsData={exam2.questions} />
+              </div>
+            }
+          />{" "}
+          <Route
+            path="/exam3"
+            element={
+              <div className="min-h-screen w-full mt-20 md:mt-30">
+                <ExamComponent questionsData={exam3.questions} />
               </div>
             }
           />

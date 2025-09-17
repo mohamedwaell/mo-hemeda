@@ -1,9 +1,8 @@
 // src/components/ExamComponent.js
 
 import React, { useState, useEffect, useCallback } from "react";
-import { questionsData } from "../const/exams";
 
-const ExamComponent = () => {
+const ExamComponent = ({ questionsData }) => {
   const [userAnswers, setUserAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -132,12 +131,9 @@ const ExamComponent = () => {
     (q) => q.id === currentQuestion
   );
 
-  // If exam not started, show start screen
-  if (!examStarted) {
-    return <>{startExam()}</>;
+  {
+    !examStarted && startExam();
   }
-
-  // Show results screen
   if (showResults) {
     const percentage = Math.round((score / totalQuestions) * 100);
     const grade =
