@@ -29,7 +29,7 @@ const Hema = ({ scrollToFeatures, text, image }) => {
   });
   return (
     <>
-      <div className="relative flex flex-col lg:flex-row items-center justify-end  md:gap-15  pb-10 lg:pb-0 min-h-screen overflow-hidden w-full">
+      <div className="relative flex flex-col lg:flex-row items-center justify-end  gap-5 lg:gap-15  pb-10 lg:pb-0 min-h-screen overflow-hidden w-full">
         <div
           id="home"
           className="flex items-center justify-center absolute top-0 left-0 right-0 lg:w-1/2  z-[-1]"
@@ -45,7 +45,7 @@ const Hema = ({ scrollToFeatures, text, image }) => {
           autoPlay
           loop
           muted
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-2] opacity-70"
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-2] opacity-50"
         ></video>
         <div
           id="text"
