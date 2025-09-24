@@ -11,28 +11,28 @@ const Hema = ({ scrollToFeatures, text, image }) => {
     timeLine.fromTo(
       "#home",
       { opacity: 0, x: -400 },
-      { opacity: 1, duration: 2, x: 0, ease: "power2.out", delay: 1 }
+      { opacity: 1, duration: 1, x: 0, ease: "power2.out", delay: 1 }
     );
     timeLine.fromTo(
       "#text",
       { opacity: 0, x: 400 },
-      { opacity: 1, duration: 2, x: 0, ease: "power2.out" }
+      { opacity: 1, duration: 1, x: 0, ease: "power2.out" }
     );
 
     timeLine.from(".split", {
       x: 150,
       opacity: 0,
-      duration: 1.5,
+      duration: 1,
       ease: "power4",
       stagger: 0.04,
     });
   });
   return (
     <>
-      <div className="flex flex-col items-center justify-center  md:gap-15 lg:flex-row pb-10 lg:pb-0 min-h-screen overflow-hidden w-full">
+      <div className="relative flex flex-col lg:flex-row items-center justify-end  md:gap-15  pb-10 lg:pb-0 min-h-screen overflow-hidden w-full">
         <div
           id="home"
-          className="flex items-center justify-center h-full lg:w-1/2"
+          className="flex items-center justify-center absolute top-0 left-0 right-0 lg:w-1/2  z-[-1]"
         >
           <img
             src={image}
@@ -40,7 +40,13 @@ const Hema = ({ scrollToFeatures, text, image }) => {
             className="h-[50vh] lg:h-[80vh] object-cover rounded-full hover:scale-105 transition-transform duration-500 mt-20"
           />
         </div>
-
+        <video
+          src="/home/bgVed1.mp4"
+          autoPlay
+          loop
+          muted
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-2] opacity-70"
+        ></video>
         <div
           id="text"
           className="flex items-center justify-center flex-col h-full lg:w-1/2 p-4"

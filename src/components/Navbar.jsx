@@ -46,7 +46,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 m-4 px-4 py-2 rounded-xl flex justify-between items-center z-40
+      className="fixed top-0 left-0 right-0  px-4 py-2  flex justify-between items-center z-40
                  bg-gradient-to-b 
     from-[#0F818C] 
     via-[#095259] 
